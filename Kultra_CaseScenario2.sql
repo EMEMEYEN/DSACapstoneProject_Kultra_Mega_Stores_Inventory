@@ -1,4 +1,6 @@
 -- Orders table has been set up in Kultra_CaseScenario1.sql file
+USE Kultra;
+SELECT * FROM Orders
 
 --6. Most valuable customers & what they purchase
 	-- Top 5 customers by profit
@@ -49,7 +51,12 @@ SELECT DISTINCT
 FROM Orders
 WHERE Returned = 1;
 
+
 -- 11. Did they spend shipping costs appropriately?
+	-- Short Answer: No
+		-- Critical priority orders, were frequently shipped using Delivery Truck. This likely caused delays.
+		-- On the other hand, Low priority orders were often shipped via Express Air, the most expensive option, unnecessarily increasing costs.
+
 SELECT 
   ShippingMethod,
   OrderPriority,
